@@ -75,14 +75,7 @@ let(:emoticon_symbols) { [:angel, :angry, :bored, :confused, :embarrassed, :fish
       end
     end
 
-    it "the emoticons stored in :english and :japanese are the correct English/Japanese equivalents" do
-      emoticons = {"O:)" => "☜(⌒▽⌒)☞", ":'(" => "(Ｔ▽Ｔ)", ";)" => "(^_-)"}
-      emoticons.each do |english_emoticon,japanese_emoticon|
-        match = result.any? do |key, value| 
-          result[key][:english] == english_emoticon && result[key][:japanese] == japanese_emoticon
-        end
-        expect(match).to eq(true), "#{english_emoticon} and #{japanese_emoticon} were not found in the same hash"
-      end
+
     end
 
   end
