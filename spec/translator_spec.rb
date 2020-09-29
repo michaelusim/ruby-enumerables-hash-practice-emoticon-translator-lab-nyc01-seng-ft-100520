@@ -14,19 +14,6 @@ let(:emoticon_symbols) { [:angel, :angry, :bored, :confused, :embarrassed, :fish
       expect(result.class).to eq(Hash)
     end
 
-    it "has a key for the name of each emoticon" do
-      if result.keys.all? { |key| key.class == Symbol }
-        emoticon_symbols.each do |key|
-          expect(!!result[key]).to eq(true)
-        end
-      elsif result.keys.all? { |key| key.class == String }
-        emoticons.each do |key|
-          expect(!!result[key]).to eq(true)
-        end
-      else
-        expect(result.keys.all? { |key| key.class == Symbol } || result.keys.all? { |key| key.class == String }).to eq(true)
-      end
-    end
 
     it "each key points to an inner hash" do
       result.keys.each { |key| expect(result[key].class).to eq(Hash) }
