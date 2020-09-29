@@ -32,22 +32,6 @@ let(:emoticon_symbols) { [:angel, :angry, :bored, :confused, :embarrassed, :fish
       result.keys.each { |key| expect(result[key].class).to eq(Hash) }
     end
 
-    it "the keys inside each inner hash are :english and :japanese" do
-      if result.keys.all? { |key| key.class == Symbol }
-        emoticon_symbols.each do |key|
-          expect(result[key].keys).to include(:japanese)
-          expect(result[key].keys).to include(:english)
-        end
-      end
-      
-      if result.keys.all? { |key| key.class == String }
-        emoticons.each do |key|
-          expect(result[key].keys).to include(:japanese)
-          expect(result[key].keys).to include(:english)
-        end
-      end
-    end
-
   end
 
 end
