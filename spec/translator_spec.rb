@@ -48,20 +48,6 @@ let(:emoticon_symbols) { [:angel, :angry, :bored, :confused, :embarrassed, :fish
       end
     end
 
-    it "the :japanese key in each inner hash points to the respective Japanese emoticon" do
-      emoticons = {
-        "angel" => "☜(⌒▽⌒)☞",
-        "bored" => "(ΘεΘ;)",
-        "surprised" => "o_O", 
-        "wink" => "(^_-)"
-      }
-
-      emoticons.each do |name, japanese_emoticon|
-        expect(result[name][:japanese]).to eq(japanese_emoticon)
-      end
-
-    end
-
   end
 
 end
